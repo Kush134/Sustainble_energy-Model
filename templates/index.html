@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Renewable Energy Model</title>
+  <link rel="icon" href="/static/images/earthicon.png">
+  <link rel="stylesheet" href="/static/css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;400;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <div id="loading-screen">
+    <h1>Creating your world...</h1>
+    <img src="/static/images/earthicon.png" alt="Spinning Earth" id="earth-icon">
+  </div>
+  
+  <div class="instructions-container">
+    <div class="instructions-content">
+      <h1 class="instructions-text">Click on a country to begin</h1>
+    </div>
+  </div>
+  
+  
+  <div class="slider-container" style="display: none;">
+    <label for="year">Year: </label>
+    <input type="range" id="yearSlider" name="year" min="2024" max="2124" value="2024">
+    <span id="yearValue">2024</span>
+    <div class="renewable-energy-display">
+      <label for="renewableEnergy">Predicted Renewable Energy: </label>
+      <span id="renewableEnergyValue">0</span>
+    </div>
+  </div>
+  
+  <button id="toggleInsights" style="display: none;" class="toggle-button">Show Insights</button>
+  <div id="insights-container" class="insights-container"></div>
+
+  <div id="globe"></div>
+  <a href="/" class="home-button">
+    <i class="fas fa-home"></i>
+  </a>
+
+  <script type="module" src="/static/earth.js"></script>
+  <script type="module" src="/static/app.js"></script>
+  <script src="//unpkg.com/d3"></script>
+  <script src="//unpkg.com/globe.gl"></script>
+  <script src="/static/toggleButton.js"></script>
+</body>
+</html>

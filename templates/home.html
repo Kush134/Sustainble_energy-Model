@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Renewable Energy Explorer</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="/static/images/earthicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="fullpage-container" data-scroll-container>
+        <div class="sections-wrapper">
+            <!-- Hero Section -->
+            <section class="section hero-section" data-scroll>
+                <div class="animation-container">
+                    <svg class="energy-flow" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice">
+                        <defs>
+                            <linearGradient id="energyGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#4ecca3" stop-opacity="0" />
+                                <stop offset="50%" stop-color="#4ecca3" stop-opacity="1" />
+                                <stop offset="100%" stop-color="#4ecca3" stop-opacity="0" />
+                            </linearGradient>
+                        </defs>
+                        <path class="energy-glow" d="M0,500 Q250,450 500,500 T1000,500" />
+                        <path class="energy-path" d="M0,500 Q250,450 500,500 T1000,500" />
+                    </svg>
+                </div>
+                <div class="text-content" data-scroll data-scroll-speed="3">
+                    <h1>Global Renewable Energy Explorer</h1>
+                    <p>Discover and compare renewable energy production across the world from 2024 to 2124.</p>
+                    <button id="explore-btn">Start Exploring</button>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section class="section about-section" data-scroll>
+                <!-- Animated Background -->
+                <div class="animated-bg">
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                </div>
+                
+                <!-- About Section -->
+                <div class="about-container">
+                    <div class="about-content">
+                        <div class="about-text">
+                            <span class="section-subtitle">About Us</span>
+                            <h2>Global Renewable Energy Explorer</h2>
+                            <p class="main-description">Our mission is to provide up-to-date insights into renewable energy production around the globe. Compare historical trends and future predictions to see how the world is transitioning towards sustainable energy sources.</p>
+                            
+                            <!-- Feature Cards -->
+                            <div class="feature-cards" data-scroll data-scroll-direction="horizontal" data-scroll-speed="-3">
+                                <div class="feature-card">
+                                    <div class="card-icon">🌍</div>
+                                    <h3>Global Coverage</h3>
+                                    <p>Comprehensive data from countries worldwide</p>
+                                </div>
+                                <div class="feature-card">
+                                    <div class="card-icon">📊</div>
+                                    <h3>Interactive Data</h3>
+                                    <p>Dynamic visualizations and analysis tools</p>
+                                </div>
+                                <div class="feature-card">
+                                    <div class="card-icon">🔮</div>
+                                    <h3>Future Insights</h3>
+                                    <p>Predictive models and trend forecasting</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Visual Element -->
+                    <div class="about-visual" data-scroll data-scroll-speed="3">
+                        <div class="energy-sphere">
+                            <div class="sphere-core"></div>
+                            <div class="sphere-orbit"></div>
+                            <div class="sphere-orbit delayed"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+             <!-- Data Sources Section -->
+             <section class="section data-sources-section" data-scroll>
+                <div class="animated-bg">
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                </div>
+                
+                <!-- Data Sources Container -->
+                <div class="data-sources-container">
+                    <div class="data-sources-content">
+                        <div class="data-sources-text">
+                            <span class="section-subtitle">Data Sources</span>
+                            <h2>Where We Got Our Data</h2>
+                            <p class="main-description">Our predictions are built on advanced statistical models and real-time data integration. Here's how we collect and process our renewable energy data:</p>
+                            
+                            <!-- Data Source Details -->
+                            <div class="feature-cards" data-scroll data-scroll-direction="horizontal" data-scroll-speed="-3">
+                                <div class="feature-card">
+                                    <div class="card-icon">📈</div>
+                                    <h3>Meta Prophet Data Prediction</h3>
+                                    <p>We utilize Meta's Prophet procedure, a powerful forecasting tool, to predict renewable energy production for each country. The prediction data is stored in a MongoDB database for real-time accessibility, while the original data from 'Our World in Data' is stored in a CSV file for future analysis and visualization.</p>
+                                </div>
+                                <div class="feature-card">
+                                    <div class="card-icon">💾</div>
+                                    <h3>Backend Data Fetching</h3>
+                                    <p>Our system fetches prediction data from a Flask backend, which is connected to an online MongoDB database. This setup allows us to ensure that data is always up-to-date and accessible in real-time.</p>
+                                </div>
+                                <div class="feature-card">
+                                    <div class="card-icon">📊</div>
+                                    <h3>Our World in Data</h3>
+                                    <p>Our complete Energy dataset is maintained by Our World in Data, including metrics on energy consumption, energy mix, and electricity mix. The dataset is updated regularly and is available in CSV, XLSX, and JSON formats for detailed analysis.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Visual Element -->
+                    <div class="data-sources-visual" data-scroll data-scroll-speed="3">
+                        <canvas id="energyChart" width="400" height="400"></canvas>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+         <!-- Footer Section -->
+        <footer class="footer">
+            <div class="footer-content" data-scroll>
+                <p>&copy; 2024 Global Renewable Energy Explorer. All rights reserved.</p>
+                <ul class="footer-links">
+                    <li><a href="https://www.linkedin.com/in/kushbhargav/">Contact</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script src="/static/scroll.js"></script>
+    <script src="/static/energyflow.js"></script>
+    <script>
+    // Get the canvas context
+    const ctx = document.getElementById('energyChart').getContext('2d');
+
+    // Define the chart
+    const energyChart = new Chart(ctx, {
+        type: 'line', // You can change this to 'bar', 'pie', etc.
+        data: {
+            labels: ['2024', '2034', '2044', '2054', '2064', '2074', '2084', '2094', '2104', '2114', '2124'],
+            datasets: [{
+                label: 'Renewable Energy Production (TWh)',
+                data: [500, 800, 1000, 1300, 1700, 2000, 2200, 2600, 3000, 3500, 4000],
+                backgroundColor: 'rgba(78, 204, 163, 0.2)',
+                borderColor: '#4ecca3',
+                borderWidth: 2,
+                fill: true,
+                tension: 0.4 // Smooths the line
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Year',
+                        color: '#e6f1ff'
+                    }
+                },
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Energy Production (TWh)',
+                        color: '#e6f1ff'
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#e6f1ff'
+                    }
+                }
+            }
+        }
+    });
+</script>
+
+
+    <script>
+        // Explore button functionality
+        document.getElementById('explore-btn').addEventListener('click', function() {
+            window.location.href = '/explore';
+        });
+    </script>
+
+</body>
+</html>
